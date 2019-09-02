@@ -3,7 +3,7 @@
  
 <body>
 <div id="txt">ここにデータを表示</div>             <!-- データを表示するdiv要素 -->
-<canvas id="canvas" width="300" height="400"></canvas>  <!-- ボールを描くcanvas要素 -->
+<canvas id="canvas" width="1000" height="2000"></canvas>  <!-- ボールを描くcanvas要素 -->
  
 <script>
 var aX = 0, aY = 0, aZ = 0;                     // 加速度の値を入れる変数を3個用意
@@ -13,8 +13,8 @@ var context = canvas.getContext('2d');          // 絵を描く部品を取得
 // ★ボールをクラス化
 class Ball {
     constructor() {                             // コンストラクタ（宣言した時に実行される関数）の定義
-        this.x = 150;                           // x座標の初期値
-        this.y = 200;                           // y座標の初期値
+        this.x = 500;                           // x座標の初期値
+        this.y = 1000;                           // y座標の初期値
         this.radius = 5;                       // 半径の初期値
         this.color = "rgb(0, 0, 255)";          // 色の初期値
         this.sp = 3;                            // 速さの係数
