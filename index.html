@@ -3,7 +3,7 @@
  
 <body>
 <div id="txt">ここにデータを表示</div>             <!-- データを表示するdiv要素 -->
-<canvas id="canvas" width="600" height="800"></canvas>  <!-- ボールを描くcanvas要素 -->
+<canvas id="canvas" width="300" height="400"></canvas>  <!-- ボールを描くcanvas要素 -->
  
 <script>
 var aX = 0, aY = 0, aZ = 0;                     // 加速度の値を入れる変数を3個用意
@@ -33,12 +33,7 @@ window.addEventListener("devicemotion", (dat) => {
 var timer = window.setInterval(() => {
     displayData();      // displayData 関数を実行
     drawPlayer();       // drawPlayer 関数を実行
-}, 0.01); // 33msごとに（1秒間に約30回）
-var timeai = window.setInterval(() => {
-    drawController();
-}, 0.01);
-    
-
+}, 33); // 33msごとに（1秒間に約30回）
  
 // データを表示する displayData 関数
 function displayData() {
@@ -56,8 +51,8 @@ function drawPlayer() {
         aY *= -1;                               // a *= b は a = a * b の意味
         aZ *= -1;
     }
-    player.x -= player.sp * aX;                 // プレイヤのx座標を更新（a -= b は a = a - b の意味）
-    player.y += player.sp * aY;                 // プレイヤのy座標を更新（a += b は a = a + b の意味）
+    player.x -= player.sp * aX*0.5;                 // プレイヤのx座標を更新（a -= b は a = a - b の意味）
+    player.y += player.sp * aY*0.5;                 // プレイヤのy座標を更新（a += b は a = a + b の意味）
     if(player.x < 0) {                          // xが0未満なら
         player.x = 0;                               // xを0にする（それより左に行かない）
     } else if(player.x > canvas.width) {        // xがcanvasの幅以上なら
@@ -68,12 +63,10 @@ function drawPlayer() {
     } else if(player.y > canvas.height) {       // yがcanvasの高さ以上なら
         player.y = canvas.height;                   // yをcanvasの高さの値にする（それより下に行かない）
     }
-}
-function drawController(){
-  context.beginPath();                        // 描画開始
-  context.arc(player.x, player.y, player.radius,  // 円を描く arc(x, y, 半径, 開始角度, 終了角度)
-              0, 2 * Math.PI);                // 角度の単位はラジアン（2π = 360度）で指定
-  context.fillStyle = player.color            // 塗りつぶす色の設定
-  context.fill();                             // 塗る
+    context.beginPath();                        // 描画開始
+    context.arc(player.x, player.y, player.radius,  // 円を描く arc(x, y, 半径, 開始角度, 終了角度)
+                0, 2 * Math.PI);                // 角度の単位はラジアン（2π = 360度）で指定
+    context.fillStyle = player.color            // 塗りつぶす色の設定
+    context.fill();                             // 塗る
 }
 </script>
