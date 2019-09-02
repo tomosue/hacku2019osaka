@@ -17,7 +17,7 @@ class Ball {
         this.y = 200;                           // y座標の初期値
         this.radius = 5;                       // 半径の初期値
         this.color = "rgb(0, 0, 255)";          // 色の初期値
-        this.sp = 3;                            // 速さの係数
+        this.sp = 1.5;                            // 速さの係数
     }
 }
 var player = new Ball();                        // ★Ballクラスのインスタンス player を宣言
@@ -33,7 +33,7 @@ window.addEventListener("devicemotion", (dat) => {
 var timer = window.setInterval(() => {
     displayData();      // displayData 関数を実行
     drawPlayer();       // drawPlayer 関数を実行
-}, 100); // 33msごとに（1秒間に約30回）
+}, 15); // 33msごとに（1秒間に約30回）
  
 // データを表示する displayData 関数
 function displayData() {
