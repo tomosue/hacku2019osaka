@@ -51,8 +51,8 @@ function drawPlayer() {
         aY *= -1;                               // a *= b は a = a * b の意味
         aZ *= -1;
     }
-    player.x -= player.sp * aX*0.5;                 // プレイヤのx座標を更新（a -= b は a = a - b の意味）
-    player.y += player.sp * aY*0.5;                 // プレイヤのy座標を更新（a += b は a = a + b の意味）
+    player.x -= player.sp * aX*0.1;                 // プレイヤのx座標を更新（a -= b は a = a - b の意味）
+    player.y += player.sp * aY*0.1;                 // プレイヤのy座標を更新（a += b は a = a + b の意味）
     if(player.x < 0) {                          // xが0未満なら
         player.x = 0;                               // xを0にする（それより左に行かない）
     } else if(player.x > canvas.width) {        // xがcanvasの幅以上なら
