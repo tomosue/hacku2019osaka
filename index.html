@@ -3,7 +3,7 @@
  
 <body>
 <div id="txt">ここにデータを表示</div>             <!-- データを表示するdiv要素 -->
-<canvas id="canvas" width="1000" height="1700"></canvas>  <!-- ボールを描くcanvas要素 -->
+<canvas id="canvas" width="1000" height="1200"></canvas>  <!-- ボールを描くcanvas要素 -->
  
 <script>
 var aX = 0, aY = 0, aZ = 0;                     // 加速度の値を入れる変数を3個用意
@@ -14,7 +14,7 @@ var context = canvas.getContext('2d');          // 絵を描く部品を取得
 class Ball {
     constructor() {                             // コンストラクタ（宣言した時に実行される関数）の定義
         this.x = 500;                           // x座標の初期値
-        this.y = 850;                           // y座標の初期値
+        this.y = 600;                           // y座標の初期値
         this.radius = 5;                       // 半径の初期値
         this.color = "rgb(0, 0, 255)";          // 色の初期値
         this.sp = 3;                            // 速さの係数
@@ -51,8 +51,8 @@ function drawPlayer() {
         aY *= -1;                               // a *= b は a = a * b の意味
         aZ *= -1;
     }
-    player.x -= player.sp * aX*0.4;                 // プレイヤのx座標を更新（a -= b は a = a - b の意味）
-    player.y += player.sp * aY*0.4;                 // プレイヤのy座標を更新（a += b は a = a + b の意味）
+    player.x -= player.sp * aX*0.6;                 // プレイヤのx座標を更新（a -= b は a = a - b の意味）
+    player.y += player.sp * aY*0.6;                 // プレイヤのy座標を更新（a += b は a = a + b の意味）
     if(player.x < 0) {                          // xが0未満なら
         player.x = 0;                               // xを0にする（それより左に行かない）
     } else if(player.x > canvas.width) {        // xがcanvasの幅以上なら
