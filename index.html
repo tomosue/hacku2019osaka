@@ -33,10 +33,10 @@ window.addEventListener("devicemotion", (dat) => {
 var timer = window.setInterval(() => {
     displayData();      // displayData 関数を実行
     drawPlayer();       // drawPlayer 関数を実行
-}, 333); // 33msごとに（1秒間に約30回）
+}, 0.01); // 33msごとに（1秒間に約30回）
 var timeai = window.setInterval(() => {
     drawController();
-}, 66);
+}, 0.01);
     
 
  
