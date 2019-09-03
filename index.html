@@ -1,7 +1,7 @@
 <title>Hack U 2019 Osaka air Drawing</title>
 </head>
  
-<body>
+<body bgcolor="#000000">
 <link rel="stylesheet" href="css/colorjoe.css">
 <h1>お絵かきアプリ</h1>
 <div id="txt">ここにデータを表示</div>             <!-- データを表示するdiv要素 -->
@@ -32,7 +32,7 @@ class Ball {
         this.x = 100;                           // x座標の初期値
         this.y = 100;                           // y座標の初期値
         this.radius = 5;                       // 半径の初期値
-        this.color = "rgb(0, 0, 255)";          // 色の初期値
+        this.color = "rgb(255, 255, 255)";          // 色の初期値
         this.sp = 3;                            // 速さの係数
     }
 }
@@ -84,5 +84,6 @@ function drawPlayer() {
                 0, 2 * Math.PI);                // 角度の単位はラジアン（2π = 360度）で指定
     context.fillStyle = player.color            // 塗りつぶす色の設定
     context.fill();                             // 塗る
+    if()
 }
 </script>
